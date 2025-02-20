@@ -1,0 +1,51 @@
+.search-button {
+    display: flex;
+    gap: 14px;
+}
+button img {
+    width: 100px;
+    height: 100px;
+}
+.map-button {
+    width: 250px;
+    height: auto;
+    border-radius: 20%;
+    
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.sake-button{
+    width: 170px;
+    height: 190px;
+    border-radius: 20%;
+    position: relative;
+    padding: 28px 24px 13px 24px;
+}
+.sake-button h2 {
+    position: absolute;
+    text-align: left;
+    margin: 0px;
+    top: 34px;
+}
+.sake-button img{
+    width: 100px;
+    height: 149px;
+    position: absolute;
+    left: 46px;
+    top:28px
+}
+.izakaya-button {
+    width: 170px;
+    height: 190px;
+    border-radius: 20%;
+}
+.map-container{
+    text-align: center;
+}
