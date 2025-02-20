@@ -14,8 +14,10 @@ function Home() {
       <div className='search-button'>
 
         <button className='sake-button'>
-            <h2>お酒</h2>
+            <a href='http://localhost:5173/Sake'>
+            <h2>お酒</h2></a>
             <img src='image 1.svg' alt='ロゴ'></img>
+            
         </button>
       
 
@@ -31,13 +33,13 @@ function Home() {
         </a>
     </div>
     
-    <div>
-        <ul>
+    <div className='mune'>
+        <ul className='bottom'> 
             <li>
                 <a href='http://localhost:5173/Home'>HOME</a>
             </li>
             <li>
-                <a href='http://localhost:5173/Home'>SAKE</a>
+                <a href='http://localhost:5173/Sake'>SAKE</a>
             </li>
             <li>
                 <a href='http://localhost:5173/Home'>IZAKAYA</a>
