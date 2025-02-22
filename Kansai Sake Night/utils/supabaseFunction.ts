@@ -6,8 +6,20 @@ export const fetchSakeList = async () => {
   if (error) {
     console.error("Supabase error:", error);
   } else {
-    console.log("Fetched Sake List:", data);
+    console.log("Fetched Sake List:");
   }
 
   return data;
 };
+
+export const fetchIzakayasList = async () => {
+    const { data, error } = await supabase.from("izakayas").select("*");
+  
+    if (error) {
+      console.error("Supabase error:", error);
+    } else {
+      console.log("Fetched Izakayas List");
+    }
+  
+    return data;
+  };
