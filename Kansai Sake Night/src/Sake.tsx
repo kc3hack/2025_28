@@ -1,113 +1,62 @@
-import { useState } from 'react'
-import './Sake.css'
+import { useEffect, useState } from 'react';
+import './Sake.css';
+import { fetchSakeList } from "../utils/supabaseFunction";
 
 function Sake() {
-  const [] = useState(0)
+  const [sakeList, setSakeList] = useState<any[]>([]);
+
+  useEffect(() => {
+    const getSakeList = async () => {
+      const data = await fetchSakeList();
+      setSakeList(data || []);
+    };
+
+    getSakeList();
+  }, []);
 
   return (
     <>
       <header className="header-container">
         <div className="header-logo">
-            <a href='http://localhost:5173/Home'>logo</a>
+          <h1>logo</h1>
         </div>
       </header>
 
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div>  
+      <div className="sake-list">
+        {sakeList.length > 0 ? (
+          sakeList.map((sake, index) => (
+            <div key={index} className="sake-item">
+              <h1>{sake.name}</h1>
+              <ul>
+                <li>
+                  <img src={sake.image_url || 'default-sake.svg'} alt={sake.name} />
+                </li>
+                <li>
+                  <h3>{sake.description}</h3>
+                </li>
+              </ul>
+            </div>
+          ))
+        ) : (
+          <p>日本酒が見つかりませんでした。</p>
+        )}
+      </div>
 
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div> 
-
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div> 
-
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div> 
-
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div> 
-
-<div className='sake-item'>
-    <h1>名前</h1>
-    <ul>
-        <li>
-            <img src='image 1.svg' />
-        </li>
-        <li>
-        <h3>ここにお酒の説明が入る</h3>
-        </li>
-    </ul>
-    
-</div> 
-
-<div className='menu' >
-        <ul className='bottom'>
-            <li>
-                <a href='http://localhost:5173/Home'>HOME</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/Sake'>SAKE</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/Izakaya'>IZAKAYA</a>
-            </li>
+      <div className="menu">
+        <ul className="bottom">
+          <li>
+            <a href="http://localhost:5173/home">HOME</a>
+          </li>
+          <li>
+            <a href="http://localhost:5173/izakaya">IZAKAYA</a>
+          </li>
+          <li>
+            <a href="http://localhost:5173/map">MAP</a>
+          </li>
         </ul>
-    </div>
-
-        
-
+      </div>
     </>
-  )
+  );
 }
 
-export default Sake
+export default Sake;
