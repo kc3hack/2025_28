@@ -1,0 +1,18 @@
+.izakaya-item {
+    border-bottom: 2px solid #000000;
+    
+}
+img {
+    width: 150px;
+    height: auto;
+}
+.bottom {
+    width: 393px;
+   position: fixed;
+   padding: 0px;
+   bottom: 0px;
+   background-color: #888;
+}
+.menu{
+    width: 393px
+}
