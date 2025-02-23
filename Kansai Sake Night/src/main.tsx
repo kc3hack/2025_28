@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<Map />} />
-        <Route path='/Izakaya' element={<Izakaya />} />
+        <Route path='/izakaya' element={<Izakaya />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
