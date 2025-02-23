@@ -18,8 +18,8 @@ const defaultCenter = { lat: 34.6937, lng: 135.5023 };
 type Izakaya = {
   id: string;
   name: string;
-  latitude: number;
-  longitude: number;
+  latitude: GLfloat;
+  longitude: GLfloat;
 };
 
 const Map: React.FC = () => {
@@ -58,16 +58,31 @@ const Map: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0 }}>
-      <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY || ""}>
-        <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={14}>
-          {!loading &&
-            izakayas.map((izakaya) => (
-              <Marker key={izakaya.id} position={{ lat: izakaya.latitude, lng: izakaya.longitude }} title={izakaya.name} />
-            ))}
-        </GoogleMap>
-      </LoadScript>
-    </div>
+    <>
+      <div style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0 }}>
+        <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY || ""}>
+          <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={14}>
+            {!loading &&
+              izakayas.map((izakaya) => (
+                <Marker key={izakaya.id} position={{ lat: izakaya.latitude, lng: izakaya.longitude }} title={izakaya.name} />
+              ))}
+          </GoogleMap>
+        </LoadScript>
+      </div>
+      <div className='menu' >
+        <ul className='bottom'>
+            <li>
+                <a href='http://localhost:5173/'>ホーム</a>
+            </li>
+            <li>
+                <a href='http://localhost:5173/sake'>地酒一覧</a>
+            </li>
+            <li>
+                <a href='http://localhost:5173/izakaya'>居酒屋一覧</a>
+            </li>
+        </ul>
+      </div>
+    </>
   );
 };
 
