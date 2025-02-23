@@ -1,53 +1,44 @@
-import { useState } from 'react'
-import './Home.css'
+import { useState } from 'react';
+import './Home.css';
 
 function Home() {
-  const [] = useState(0)
+  const [] = useState(0);
 
   return (
     <>
       <header className="header-container">
-        <div className="header-logo">
-            <a href='http://localhost:5173/Home'>logo</a>
+        <div>
+          <h1>logo</h1>
         </div>
       </header>
-      <div className='search-button'>
-
-        <button className='sake-button'>
-            <h2>お酒</h2>
-            <img src='image 1.svg' alt='ロゴ'></img>
-        </button>
       
+      <div className="main-container">
+        <div className="search-button">
+         <a href="http://localhost:5173/sake">
+           <button className="sake-button">
+              <h2>お酒</h2>
+              <img src="image 1.svg" alt="ロゴ" />
+           </button>
+          </a>
+          
+          <a href="http://localhost:5173/izakaya">
+            <button className="izakaya-button">
+             <h2>居酒屋</h2>
+           </button>
+          </a>
+        </div>
 
-      
-        <button className='izakaya-button'>
-            <h2>居酒</h2>
-        </button>
+        <div className="map-container">
+          <a href="http://localhost:5173/map">
+           <button className="map-button">
+             <img src="Map.svg" alt="map"/>
+             <h2>マップ</h2>
+           </button>
+          </a>
+        </div>
       </div>
-
-    <div className='map-container'>
-        <a href="http://localhost:5173/Map">
-            <img src='Map.svg' alt='map' className='map-button'/>
-        </a>
-    </div>
-    
-    <div className='menu' >
-        <ul className='bottom'>
-            <li>
-                <a href='http://localhost:5173/Home'>HOME</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/Sake'>SAKE</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/Izakaya'>IZAKAYA</a>
-            </li>
-        </ul>
-    </div>
-
-
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
