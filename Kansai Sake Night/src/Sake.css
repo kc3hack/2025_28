@@ -1,26 +1,64 @@
-ul {
-    display: flex;
-    justify-content: space-between;
+body, html {
+    min-height: 100vh;  
+    overflow-y: auto; 
 }
-li{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
+
 img {
     width: 150px;
     height: auto;
 }
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sake-list {
+    margin-top: 650px;
+    margin-left: 0px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
 .sake-item {
+    width: 50%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
     border-bottom: 2px solid #000000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
+.sake-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 .bottom {
-    width: 393px;
-   position: fixed;
-   padding: 0px;
-   bottom: 0px;
-   background-color: #888;
+    width: 100%;
+    position: fixed;
+    padding: 10px;
+    bottom: -16px;  
+    background-color: #d3d3d3;
 }
-.menu{
-    width: 393px
+
+.menu {
+    width: 100%;
+    padding-bottom: 50px; /* メニューが隠れないように余白を追加 */
 }
