@@ -7,6 +7,8 @@ import Sake from './Sake.tsx'
 import Map from './Map.tsx'
 import Izakaya from './Izakaya.tsx'
 import Test from './Test.tsx'
+import SakeDetail from './SakeDetail.tsx';
+import IzakayaDetail from './IzakayaDetail.tsx';
 
 
 
@@ -16,8 +18,10 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sake" element={<Sake />} />
+        <Route path="/sake/:id" element={<SakeDetail />} />
         <Route path="/map" element={<Map />} />
         <Route path='/izakaya' element={<Izakaya />} />
+        <Route path="/izakaya/:id" element={<IzakayaDetail />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </Router>

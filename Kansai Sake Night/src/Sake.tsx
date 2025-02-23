@@ -25,17 +25,12 @@ function Sake() {
       <div className="sake-list">
         {sakeList.length > 0 ? (
           sakeList.map((sake, index) => (
-            <div key={index} className="sake-item">
-              <h1>{sake.name}</h1>
-              <ul>
-                <li>
-                  <img src={sake.image_url || 'default-sake.svg'} alt={sake.name} />
-                </li>
-                <li>
-                  <h3>{sake.description}</h3>
-                </li>
-              </ul>
-            </div>
+            <a key={index} href={`http://localhost:5173/sake/${sake.id}`}>
+              <div className="sake-item">
+                <h2>{sake.name}</h2>
+                <img src={sake.image_url || 'default-sake.svg'} alt={sake.name} />
+              </div>
+            </a>
           ))
         ) : (
           <p>日本酒が見つかりませんでした。</p>
@@ -45,13 +40,13 @@ function Sake() {
       <div className="menu">
         <ul className="bottom">
           <li>
-            <a href="http://localhost:5173/home">HOME</a>
+            <a href="http://localhost:5173/">ホーム</a>
           </li>
           <li>
-            <a href="http://localhost:5173/izakaya">IZAKAYA</a>
+            <a href="http://localhost:5173/izakaya">居酒屋一覧</a>
           </li>
           <li>
-            <a href="http://localhost:5173/map">MAP</a>
+            <a href="http://localhost:5173/map">マップ</a>
           </li>
         </ul>
       </div>

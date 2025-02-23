@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import { fetchIzakayasList } from "../utils/supabaseFunction"; // Supabaseの関数をインポート
 
 // Google Maps APIキー
@@ -18,14 +18,16 @@ const defaultCenter = { lat: 34.6937, lng: 135.5023 };
 type Izakaya = {
   id: string;
   name: string;
-  latitude: GLfloat;
-  longitude: GLfloat;
+  latitude: number;
+  longitude: number;
+  google_maps_url: string; // Google MapsのURLを追加
 };
 
 const Map: React.FC = () => {
   const [izakayas, setIzakayas] = useState<Izakaya[]>([]);
   const [loading, setLoading] = useState(true);
   const [center, setCenter] = useState(defaultCenter); // マップの中心
+  const [selectedIzakaya, setSelectedIzakaya] = useState<Izakaya | null>(null); // クリックした居酒屋のデータ
 
   // 現在地を取得してマップの中心を変更
   useEffect(() => {
@@ -64,22 +66,42 @@ const Map: React.FC = () => {
           <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={14}>
             {!loading &&
               izakayas.map((izakaya) => (
-                <Marker key={izakaya.id} position={{ lat: izakaya.latitude, lng: izakaya.longitude }} title={izakaya.name} />
+                <Marker
+                  key={izakaya.id}
+                  position={{ lat: izakaya.latitude, lng: izakaya.longitude }}
+                  title={izakaya.name}
+                  onClick={() => setSelectedIzakaya(izakaya)} // マーカークリックで選択
+                />
               ))}
+
+            {/* クリックしたマーカーの情報を表示 */}
+            {selectedIzakaya && (
+              <InfoWindow
+                position={{ lat: selectedIzakaya.latitude, lng: selectedIzakaya.longitude }}
+                onCloseClick={() => setSelectedIzakaya(null)} // InfoWindowを閉じる
+              >
+                <div>
+                  <div>{selectedIzakaya.name}</div>
+                  <a href={selectedIzakaya.google_maps_url} target="_blank" rel="noopener noreferrer">
+                    Googleマップで見る
+                  </a>
+                </div>
+              </InfoWindow>
+            )}
           </GoogleMap>
         </LoadScript>
       </div>
-      <div className='menu' >
-        <ul className='bottom'>
-            <li>
-                <a href='http://localhost:5173/'>ホーム</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/sake'>地酒一覧</a>
-            </li>
-            <li>
-                <a href='http://localhost:5173/izakaya'>居酒屋一覧</a>
-            </li>
+      <div className="menu">
+        <ul className="bottom">
+          <li>
+            <a href="http://localhost:5173/">ホーム</a>
+          </li>
+          <li>
+            <a href="http://localhost:5173/sake">地酒一覧</a>
+          </li>
+          <li>
+            <a href="http://localhost:5173/izakaya">居酒屋一覧</a>
+          </li>
         </ul>
       </div>
     </>
