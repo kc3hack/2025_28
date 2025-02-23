@@ -31,19 +31,20 @@ function Home() {
         </a>
     </div>
     
-    <div>
-        <ul>
+    <div className='menu' >
+        <ul className='bottom'>
             <li>
                 <a href='http://localhost:5173/Home'>HOME</a>
             </li>
             <li>
-                <a href='http://localhost:5173/Home'>SAKE</a>
+                <a href='http://localhost:5173/Sake'>SAKE</a>
             </li>
             <li>
-                <a href='http://localhost:5173/Home'>IZAKAYA</a>
+                <a href='http://localhost:5173/Izakaya'>IZAKAYA</a>
             </li>
         </ul>
     </div>
+
 
     </>
   )

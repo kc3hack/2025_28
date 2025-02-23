@@ -49,3 +49,13 @@ li{
 .map-container{
     text-align: center;
 }
+.bottom {
+    width: 393px;
+   position: fixed;
+   padding: 0px;
+   bottom: 0px;
+   background-color: #888;
+}
+.menu{
+    width: 393px
+}
