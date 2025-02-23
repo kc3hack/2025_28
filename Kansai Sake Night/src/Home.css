@@ -1,0 +1,106 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 120px;
+    background-color: #d3d3d3; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+    padding-top: 100px; 
+    padding-left: 35px;
+}
+  
+ 
+.search-button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; 
+    width: 100%;
+}
+  
+.sake-button, .izakaya-button {
+    width: 170px;
+    height: 210px;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f8f8f8; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+  
+
+.sake-button h2, .izakaya-button h2 {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+}
+  
+.sake-button img {
+    width: 100px;
+    height: 149px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    padding-top: 50px; 
+}
+  
+.map-button {
+    width: 250px; 
+    height: auto;
+    border-radius: 20%;
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom {
+    width: 393px;
+   position: fixed;
+   padding: 0px;
+   bottom: 0px;
+   background-color: #888;
+}
+.menu{
+    width: 393px
+}
+
+
+.map-button img {
+    border-radius: 20%;
+    max-width: 250px; 
+    height: auto; 
+}
+
+.map-button h2 {
+    margin-top: 5px; 
+    font-size: 16px;
+}
+
