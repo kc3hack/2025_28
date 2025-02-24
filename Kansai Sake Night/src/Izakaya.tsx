@@ -18,7 +18,7 @@ function Izakaya() {
         <>
             <header className="header-container">
                 <div className="header-logo">
-                    <h1>logo</h1>
+                    <img src="logo.png"/>
                 </div>
             </header>
 
