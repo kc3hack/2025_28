@@ -53,7 +53,7 @@ Kansai　Sake　Night\
 ### その他
 React以外は、ほぼ初めて触れる技術を採用してみた。
 ## 使用技術
-React\
+React + Vite + TS\
 supabase\
 GoogleMapsApi
 <!-- 使用技術を入力してください -->
