@@ -39,7 +39,7 @@ Kansai　Sake　Night\
 
 
 ## 操作説明・デモ動画
-[デモ動画はこちら](https://www.youtube.com/watch?v=fbzGp0XJGq8)
+[https://www.youtube.com/watch?v=fbzGp0XJGq8](https://youtube.com/shorts/0h6nS6FMKX4?feature=share)
 <!-- 開発したプロダクトの操作説明について入力してください。また、操作説明デモ動画があれば、埋め込みやリンクを記載してください -->
 
 
