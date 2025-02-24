@@ -1,7 +1,8 @@
 # Kansai Sake Night
 <!-- プロダクト名に変更してください -->
 
-![Kansai Sake Night](https://kc3.me/cms/wp-content/uploads/2024/11/hack25-eyecatch.png)
+![ImageToStl com_kc3ハッカソン](https://github.com/user-attachments/assets/29fc6cd2-47ac-4369-9ce9-18386cde354a)
+
 <!-- プロダクト名・イメージ画像を差し変えてください -->
 
 
@@ -38,7 +39,7 @@ Kansai　Sake　Night\
 
 
 ## 操作説明・デモ動画
-[デモ動画はこちら](https://www.youtube.com/watch?v=fbzGp0XJGq8)
+[https://www.youtube.com/watch?v=fbzGp0XJGq8](https://youtube.com/shorts/0h6nS6FMKX4?feature=share)
 <!-- 開発したプロダクトの操作説明について入力してください。また、操作説明デモ動画があれば、埋め込みやリンクを記載してください -->
 
 
@@ -52,7 +53,7 @@ Kansai　Sake　Night\
 ### その他
 React以外は、ほぼ初めて触れる技術を採用してみた。
 ## 使用技術
-React\
+React + Vite + TS\
 supabase\
 GoogleMapsApi
 <!-- 使用技術を入力してください -->

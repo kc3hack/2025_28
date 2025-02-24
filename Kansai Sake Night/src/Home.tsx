@@ -24,6 +24,7 @@ function Home() {
           <a href="http://localhost:5173/izakaya">
             <button className="izakaya-button">
              <h2>居酒屋</h2>
+             <img src="image 4.svg" alt="ロゴ" />
            </button>
           </a>
         </div>
